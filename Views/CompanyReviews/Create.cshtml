@@ -1,0 +1,44 @@
+@model HanoiStudentGigs.Models.CompanyReview
+
+@{
+    ViewData["Title"] = "Viết đánh giá công ty";
+}
+
+<h2>Viết đánh giá công ty</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="CompanyName" class="form-label"></label>
+        <input asp-for="CompanyName" class="form-control" />
+        <span asp-validation-for="CompanyName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Content" class="form-label"></label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Rating" class="form-label"></label>
+        <select asp-for="Rating" class="form-select">
+            <option value="">-- Chọn sao --</option>
+            @for (int i = 1; i <= 5; i++)
+            {
+                <option value="@i">@i sao</option>
+            }
+        </select>
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ReviewerName" class="form-label"></label>
+        <input asp-for="ReviewerName" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Gửi đánh giá</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

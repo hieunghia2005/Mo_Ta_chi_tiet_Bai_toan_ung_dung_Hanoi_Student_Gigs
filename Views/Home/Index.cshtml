@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-5 fw-bold text-primary">Chào mừng đến với Hanoi Student Gigs 🎓</h1>
+    <p class="lead text-muted">Nền tảng việc làm bán thời gian & freelance dành cho sinh viên tại Hà Nội</p>
+</div>
+<!-- Tìm kiếm và bộ lọc -->
+<div class="d-flex flex-wrap gap-2 my-3">
+    <input type="text" class="form-control w-25" placeholder="Tìm theo từ khóa..." />
+    <select class="form-select w-auto">
+        <option selected>Mức Lương</option>
+        <option>Dưới 3 triệu</option>
+        <option>3-5 triệu</option>
+    </select>
+    <select class="form-select w-auto">
+        <option selected>Loại việc làm</option>
+        <option>Part-time</option>
+        <option>Freelance</option>
+    </select>
+    <select class="form-select w-auto">
+        <option selected>Ngành nghề</option>
+        <option>Gia sư</option>
+        <option>Thiết kế</option>
+    </select>
+    <select class="form-select w-auto">
+        <option selected>Công ty</option>
+        <option>Hoàng Hà Mobile</option>
+    </select>
+    <button class="btn btn-primary">Tìm Việc</button>
+</div>
+
+<div class="row text-center mb-5">
+    <div class="col-md-4">
+        <div class="card shadow-sm p-3">
+            <h5 class="card-title text-primary">🎯 Tìm việc phù hợp</h5>
+            <p class="card-text">Dễ dàng tìm kiếm công việc phù hợp với kỹ năng & lịch học của bạn.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm p-3">
+            <h5 class="card-title text-primary">🏢 Nhà tuyển dụng uy tín</h5>
+            <p class="card-text">Chỉ hiển thị các tin đăng đã được kiểm duyệt bởi hệ thống.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm p-3">
+            <h5 class="card-title text-primary">📝 Ứng tuyển nhanh chóng</h5>
+            <p class="card-text">Tạo hồ sơ & ứng tuyển trong vài cú click chuột.</p>
+        </div>
+    </div>
+</div>
+
+<h3 class="mb-3 text-secondary">📚 Lựa chọn ngành nghề</h3>
+
+<div class="row g-3 mb-5">
+    @{
+        var categories = new[] {
+            "Gia sư", "Thiết kế đồ họa", "Lập trình", "Marketing", "Nhà hàng - phục vụ", "Dịch thuật", "Nhập liệu", "Bán hàng"
+        };
+    }
+
+    @foreach (var cat in categories)
+    {
+        <div class="col-md-3 col-sm-6">
+            <a href="/Jobs/SearchByCategory?category=@cat" class="btn btn-outline-primary w-100">
+                @cat
+            </a>
+        </div>
+    }
+</div>
+
+<h3 class="mb-3 text-secondary">🔥 Việc làm nổi bật</h3>
+
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">Nhân viên bán hàng cuối tuần</h5>
+                <p><strong>Địa điểm:</strong> Aeon Mall Hà Đông</p>
+                <p><strong>Mô tả:</strong> Phục vụ khách hàng, sắp xếp kệ hàng, hỗ trợ thu ngân trong giờ cao điểm.</p>
+                <p><strong>Thời gian:</strong> Thứ 7 & Chủ nhật (9h - 18h)</p>
+                <p><strong>Lương:</strong> 30.000 VNĐ/giờ</p>
+                <p><strong>Số lượng:</strong> 5 người</p>
+                <p><strong>Yêu cầu:</strong> Nhanh nhẹn, giao tiếp tốt, ưu tiên đã có kinh nghiệm bán hàng.</p>
+                <p><strong>Hạn nộp hồ sơ:</strong> 10/07/2025</p>
+                <a href="/Job/Details/1" class="btn btn-outline-primary mt-auto">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">Thiết kế logo freelance</h5>
+                <p><strong>Địa điểm:</strong> Làm việc từ xa</p>
+                <p><strong>Mô tả:</strong> Thiết kế logo sáng tạo cho startup, theo yêu cầu khách hàng (1-3 phiên chỉnh sửa).</p>
+                <p><strong>Thời gian:</strong> Linh hoạt (deadline 3 ngày/logo)</p>
+                <p><strong>Lương:</strong> 150.000 – 300.000 VNĐ/logo</p>
+                <p><strong>Số lượng:</strong> 2-3 bạn thiết kế</p>
+                <p><strong>Yêu cầu:</strong> Biết dùng Canva, Photoshop hoặc Illustrator. Có portfolio là lợi thế.</p>
+                <p><strong>Hạn nộp hồ sơ:</strong> 12/07/2025</p>
+                <a href="/Job/Details/2" class="btn btn-outline-primary mt-auto">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">Gia sư Toán lớp 9</h5>
+                <p><strong>Địa điểm:</strong> Cầu Giấy, Hà Nội</p>
+                <p><strong>Mô tả:</strong> Kèm học sinh ôn thi vào lớp 10, tập trung phần hình học và đại số nâng cao.</p>
+                <p><strong>Thời gian:</strong> 3 buổi/tuần (tối thứ 2, 4, 6 - từ 18h đến 20h)</p>
+                <p><strong>Lương:</strong> 120.000 VNĐ/buổi</p>
+                <p><strong>Số lượng:</strong> 1 gia sư</p>
+                <p><strong>Yêu cầu:</strong> Sinh viên năm 2 trở lên ngành Sư phạm Toán hoặc điểm Toán THPTQG ≥ 9.0</p>
+                <p><strong>Hạn nộp hồ sơ:</strong> 15/07/2025</p>
+                <a href="/Job/Details/3" class="btn btn-outline-primary mt-auto">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-5" />
+<div class="bg-light p-4 rounded shadow-sm text-center">
+    <h4 class="text-danger fw-bold mb-2">📞 Hotline hỗ trợ nhà tuyển dụng</h4>
+    <p class="lead mb-0">Nếu bạn là nhà tuyển dụng và cần hỗ trợ đăng tin, vui lòng liên hệ hotline:</p>
+    <p class="fs-5 text-primary mt-2">
+        <i class="bi bi-telephone-fill"></i> 0987 654 321 (Zalo/Call)
+    </p>
+    <p>Email hỗ trợ: <a href="mailto:nhatuyendung@hanoistudentgigs.vn">nhatuyendung@hanoistudentgigs.vn</a></p>
+
+    <div class="mt-3 d-flex justify-content-center gap-3">
+        <a href="https://zalo.me/0987654321" target="_blank" class="btn btn-outline-success">
+            <i class="bi bi-chat-dots-fill"></i> Zalo
+        </a>
+        <a href="https://facebook.com/hanoistudentgigs" target="_blank" class="btn btn-outline-primary">
+            <i class="bi bi-facebook"></i> Facebook
+        </a>
+    </div>
+</div>
+

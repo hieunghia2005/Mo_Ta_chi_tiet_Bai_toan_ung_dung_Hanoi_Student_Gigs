@@ -1,0 +1,41 @@
+@model HanoiStudentGigs.Models.Job
+
+@{
+    ViewData["Title"] = "Đăng tin tuyển dụng";
+}
+
+<h2>Đăng việc mới</h2>
+
+<form asp-action="CreateJob" method="post">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Tiêu đề</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Mô tả công việc</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Requirements" class="form-label">Yêu cầu</label>
+        <input asp-for="Requirements" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Location" class="form-label">Địa điểm</label>
+        <input asp-for="Location" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="WorkTime" class="form-label">Thời gian làm việc</label>
+        <input asp-for="WorkTime" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Salary" class="form-label">Mức lương</label>
+        <input asp-for="Salary" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Đăng tin</button>
+</form>

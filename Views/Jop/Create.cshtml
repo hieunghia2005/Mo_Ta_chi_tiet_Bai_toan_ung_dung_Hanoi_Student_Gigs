@@ -1,0 +1,52 @@
+@model HanoiStudentGigs.Models.Job
+
+@{
+    ViewData["Title"] = "Đăng công việc mới";
+}
+
+<h2 class="mb-4">Đăng công việc mới</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Tiêu đề công việc</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Mô tả công việc</label>
+        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Requirements" class="form-label">Yêu cầu</label>
+        <textarea asp-for="Requirements" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="Requirements" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Location" class="form-label">Địa điểm</label>
+        <input asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="WorkTime" class="form-label">Thời gian làm việc</label>
+        <input asp-for="WorkTime" class="form-control" />
+        <span asp-validation-for="WorkTime" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Salary" class="form-label">Mức lương</label>
+        <input asp-for="Salary" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Đăng tin</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Quay lại</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,23 @@
+@model HanoiStudentGigs.Models.Job
+
+@{
+    ViewData["Title"] = "Chi tiết công việc";
+}
+
+<div class="card shadow-sm p-4">
+    <h2 class="mb-3">@Model.Title</h2>
+    
+    <p><strong>Địa điểm:</strong> @Model.Location</p>
+    <p><strong>Mức lương:</strong> @Model.Salary</p>
+    <p><strong>Hạn nộp hồ sơ:</strong> @Model.Deadline.ToString()</p>
+
+    <hr />
+
+    <h5>Mô tả công việc</h5>
+    <p>@Model.Description</p>
+
+    <h5>Yêu cầu</h5>
+    <p>@Model.Requirements</p>
+
+    <a href="#" class="btn btn-success mt-3">Ứng tuyển ngay</a>
+</div>

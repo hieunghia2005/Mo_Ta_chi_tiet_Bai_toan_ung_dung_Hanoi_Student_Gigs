@@ -1,0 +1,52 @@
+@model IEnumerable<HanoiStudentGigs.Models.JobPost>
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Tìm kiếm theo ngành nghề";
+    var categories = ViewBag.Categories as List<string>;
+    var selectedCategory = HttpContextAccessor.HttpContext.Request.Query["category"].ToString();
+}
+
+<div class="container">
+    <h2 class="mb-4 text-primary">🔎 Tìm kiếm công việc theo ngành nghề</h2>
+
+    <form method="get" class="row g-3 align-items-end mb-4">
+        <div class="col-md-6">
+            <label for="category" class="form-label">Chọn ngành nghề:</label>
+            <select id="category" name="category" class="form-select" onchange="this.form.submit()">
+                <option value="">-- Tất cả ngành nghề --</option>
+                @foreach (var cat in categories)
+                {
+                    <option value="@cat" selected="@(selectedCategory == cat ? "selected" : null)">
+                        @cat
+                    </option>
+                }
+            </select>
+        </div>
+    </form>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning text-center">
+            Không có công việc nào phù hợp với ngành "@selectedCategory".
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var job in Model)
+            {
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@job.Title</h5>
+                            <p class="card-text">@job.Description</p>
+                            <span class="badge bg-secondary">@job.Category</span>
+                            <p class="text-muted mt-2">Đăng lúc: @job.CreatedAt.ToString("dd/MM/yyyy")</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

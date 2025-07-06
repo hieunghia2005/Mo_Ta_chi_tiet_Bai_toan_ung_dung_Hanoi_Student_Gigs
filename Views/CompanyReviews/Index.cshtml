@@ -1,0 +1,57 @@
+@model IEnumerable<HanoiStudentGigs.Models.CompanyReview>
+
+@{
+    ViewData["Title"] = "Đánh giá công ty";
+    
+}
+
+<h2 class="mb-3">📝 Đánh giá công ty</h2>
+<a class="btn btn-primary mb-4" href="/CompanyReviews/Create">+ Viết đánh giá</a>
+
+<<hr class="my-5" />
+<h3 class="mb-4">🏆 Các công ty nổi bật tại Hà Nội</h3>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+            <img src="~/images/fpt.jpg" class="card-img-top p-3" alt="FPT Software" style="height:180px; object-fit:contain;" />
+            <div class="card-body">
+                <h5 class="card-title">FPT Software</h5>
+                <p class="card-text">Công ty công nghệ hàng đầu tại Việt Nam với môi trường làm việc hiện đại.</p>
+            </div>
+            <div class="card-footer text-end bg-white border-0">
+                <span class="text-warning fw-semibold">⭐ 4.7 / 5</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+            <img src="~/images/vng.jpg" class="card-img-top p-3" alt="VNG Corporation" style="height:180px; object-fit:contain;" />
+            <div class="card-body">
+                <h5 class="card-title">VNG Corporation</h5>
+                <p class="card-text">Nổi tiếng với các sản phẩm công nghệ và startup sáng tạo.</p>
+            </div>
+            <div class="card-footer text-end bg-white border-0">
+                <span class="text-warning fw-semibold">⭐ 4.6 / 5</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+            <img src="~/images/vingroup.jpeg" class="card-img-top p-3" alt="VinGroup" style="height:180px; object-fit:contain;" />
+            <div class="card-body">
+                <h5 class="card-title">VinGroup</h5>
+                <p class="card-text">Tập đoàn đa ngành lớn nhất Việt Nam, môi trường chuyên nghiệp.</p>
+            </div>
+            <div class="card-footer text-end bg-white border-0">
+                <span class="text-warning fw-semibold">⭐ 4.5 / 5</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thêm tiếp các công ty khác nếu muốn -->
+</div>
+
+

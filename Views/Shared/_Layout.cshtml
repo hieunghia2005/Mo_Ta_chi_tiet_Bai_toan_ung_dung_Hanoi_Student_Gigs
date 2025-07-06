@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Hanoi Student Gigs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-light py-2 shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Logo + Tên ứng dụng + Links trái -->
+            <div class="d-flex align-items-center gap-4">
+                <img src="/images/images.jpg" alt="Logo " height="40" />
+                <span class="fw-bold fs-4 text-dark">Hanoi Student Gigs</span>
+                
+                <a asp-controller="Home" asp-action="Index" class="text-dark text-decoration-none">Trang chủ</a>
+                <a asp-controller="CompanyReviews" asp-action="Index" class="text-dark text-decoration-none">Đánh giá công ty</a>
+            </div>
+
+            <!-- Links phải -->
+            <div class="d-flex align-items-center gap-3">
+                <a href="/StudentProfiles/Edit/" class="text-dark text-decoration-none">Tạo CV</a>
+                <a href="/Auth/Login" class="text-dark text-decoration-none">Đăng nhập</a>
+                <span class="text-muted">|</span>
+                <a href="/Auth/Register" class="text-dark text-decoration-none">Đăng ký</a>
+                <span class="text-muted">|</span>
+                <a href="/Employers" class="text-dark text-decoration-none">Nhà tuyển dụng</a>
+                <a href="/Employers/CreateJob" class="text-dark text-decoration-none">Đăng việc</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nội dung chính -->
+    <main class="container mt-4">
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3 mt-4">
+        <p class="text-muted mb-0">&copy; 2025 - Hanoi Student Gigs</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

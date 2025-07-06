@@ -1,0 +1,31 @@
+@model IEnumerable<HanoiStudentGigs.Models.Job>
+
+@{
+    ViewData["Title"] = "Danh sách việc làm";
+}
+
+<h2 class="mb-4">Việc làm đang tuyển</h2>
+
+@if (!Model.Any())
+{
+    <p>Hiện chưa có công việc nào được đăng.</p>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        @foreach (var job in Model)
+        {
+            <div class="col">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">@job.Title</h5>
+                        <p class="card-text"><strong>Địa điểm:</strong> @job.Location</p>
+                        <p class="card-text"><strong>Thời gian:</strong> @job.WorkTime</p>
+                        <p class="card-text"><strong>Lương:</strong> @job.Salary</p>
+                        <a asp-controller="Jobs" asp-action="Details" asp-route-id="@job.Id" class="btn btn-primary mt-2">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
